@@ -43,7 +43,12 @@ bot.respond = function (request) {
     return;
   }
 
-  botName = botConfig.botName.toLowerCase();
+  if (groupID.indexOf('+') === -1) {
+    botName = botConfig.botName.toLowerCase();
+  } else {
+    botName = config.bots[0].botName;
+  }
+  
   msg = request.text;
   console.log('New message from %s in group \'%s\': %s', request.name, botConfig.groupLocalID, msg);
 
