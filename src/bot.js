@@ -43,7 +43,7 @@ bot.respond = function (request) {
     return;
   }
 
-  if (groupID.indexOf('+') === -1) {
+  if (groupID.indexOf('+') > -1) {
     botConfig = config.bots[0];  
   }
 
